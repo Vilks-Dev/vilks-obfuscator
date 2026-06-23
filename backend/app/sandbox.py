@@ -28,9 +28,12 @@ class VilksUltraFortress:
         # Le stub est la concaténation de 30+ couches logiques
         stub = f"{sec};def {self.f_n}(): {garbage};m={self.jump_map};c={repr(self.chunks)};r=['']*len(c);[r.__setitem__(t,c[i]) for i,t in enumerate(m)];x=''.join(r);exec(compile(x,'<v>','exec'),{{'__builtins__':__import__('builtins')}});{self.f_n}()"
         
-        header = """# ==========================================================
-# VILKS V4.0 - HEAVY SECURITY LAYER - NO TAMPERING ALLOWED
-# ==========================================================
+        header = """# ========================================================== #
+#                VILKS - OBFUSCATOR                          #
+#              Advanced Protection Layer                     #
+#                                                            #
+#   GitHub: https://github.com/Vilks-Dev/vilks-obfuscator    #
+# ========================================================== #
 """
         return header + stub
 
