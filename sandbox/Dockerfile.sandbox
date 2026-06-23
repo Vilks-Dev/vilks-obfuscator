@@ -1,0 +1,14 @@
+FROM python:3.11-alpine
+
+WORKDIR /workspace
+
+RUN mkdir -p /engine && chown -R 1000:1000 /workspace /engine
+
+COPY engine/ /engine/
+
+USER 1000:1000
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+ENTRYPOINT ["python", "/engine/run_obfuscator.py"]
